@@ -2,7 +2,7 @@
  * This file contains some integration with the native Shopify Reviews app to style it in the context of the theme.
  */
 
-import {Delegate} from "//solaone.fr/cdn/shop/t/9/assets/vendor.min.js?v=101728284033374364961698012887";
+import {Delegate} from "//solaskinpro.com/cdn/shop/t/8/assets/vendor.min.js?v=101728284033374364961697794092";
 
 const _transformForm = (spr) => {
   const labels = Array.from(spr.querySelectorAll('.spr-form-label')),

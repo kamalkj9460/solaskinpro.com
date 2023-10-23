@@ -546,7 +546,7 @@ https://flickity.metafizzy.co
                           {%- capture sizes -%}
                             (max-width: 480px) {{ block.settings.inset_image_size }}vw,(max-width: 767px) {{ block.settings.inset_image_size }}vw, {{ 0.5 | times: block.settings.inset_image_size | divided_by: 100.0 | times: 100.0 | round }}vw
                           {%- endcapture -%}
-                          {{ block.settings.inset_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+                          {{ block.settings.inset_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                         </div>
                       {%- else -%}
                         <div class="dsgn-pck__image__wrapper">
@@ -765,7 +765,7 @@ https://flickity.metafizzy.co
                       {%- capture sizes -%}
                         (max-width: 480px) {{ section.settings.base_width | append: 'vw' | default: '90vw' }}, {{ section.settings.base_width | divided_by: section.settings.per_row | divided_by: 2 | append: 'vw' | default: '33vw' }}
                       {%- endcapture -%}
-                      {{ block.settings.feature_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+                      {{ block.settings.feature_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                     </div>
                   </div>
                 {%- endif -%}
@@ -801,7 +801,7 @@ https://flickity.metafizzy.co
                           {%- capture sizes -%}
                             (max-width: 480px) {{ section.settings.base_width | append: 'vw' | default: '90vw' }}, {{ section.settings.base_width | divided_by: section.settings.per_row | divided_by: 2 | append: 'vw' | default: '33vw' }}
                           {%- endcapture -%}
-                          {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+                          {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                         </div>
                       </div>
                     {%- endif -%}

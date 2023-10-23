@@ -83,7 +83,7 @@ LIQUID
             {%- capture image_id -%}image-{{ block.id }}{%- endcapture -%}
             {%- capture image_class -%}rounded-sm shadow-sm {% unless section.settings.images_layout == 'stacked' %}reveal{% endunless %}{%- endcapture -%}
 
-            {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: id: image_id, loading: 'lazy', style: style, sizes: 'min(100vw, 500px)', widths: '200,300,400,500,600,700,800,900,1000', class: image_class -}}
+            {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: id: image_id, loading: 'lazy', style: style, sizes: 'min(100vw, 500px)', widths: '200,300,400,500,600,700,800,900,1000', class: image_class | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' -}}
           {%- endif -%}
         {%- endfor -%}
       {%- endif -%}

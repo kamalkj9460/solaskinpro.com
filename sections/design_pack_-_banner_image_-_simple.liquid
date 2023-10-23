@@ -241,7 +241,7 @@
             {%- if section.settings.mobile_background_image != blank -%}
               <source media="(max-width: 480px)" srcset="{{ section.settings.mobile_background_image | image_url: width: 960 }}">
             {%- endif -%}
-            {{ section.settings.background_image | image_url: width: 5000 | image_tag:  widths: widths, sizes: '100vw' }}
+            {{ section.settings.background_image | image_url: width: 5000 | image_tag:  widths: widths, sizes: '100vw' | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
           </picture>
         {%- else -%}
           <img
@@ -511,7 +511,7 @@
                                     {%- capture sizes -%}
                                       (max-width: 480px) calc(100vw / {{ block.settings.icon_width }}), calc({{ section.settings.text_width | default: 50 }}vw / {{ block.settings.icon_width }})
                                     {%- endcapture -%}
-                                    {{ block.settings[icon] | image_url: width: block.settings[icon].width | image_tag:  widths: widths, sizes: sizes }}
+                                    {{ block.settings[icon] | image_url: width: block.settings[icon].width | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                                     {%- if block.settings[text] != blank -%}
                                       <p class="dsgn-pck__icon-text">
                                         {{ block.settings[text] }}
@@ -652,7 +652,7 @@
                                 {%- capture sizes -%}
                                   (max-width: 480px) {{ block.settings.inset_image_size }}vw,(max-width: 767px) {{ block.settings.inset_image_size }}vw, {{ 0.5 | times: block.settings.inset_image_size | divided_by: 100.0 | times: 100.0 | round }}vw
                                 {%- endcapture -%}
-                                {{ block.settings.inset_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+                                {{ block.settings.inset_image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                               </div>
                             {%- else -%}
                               <div class="dsgn-pck__image__wrapper">

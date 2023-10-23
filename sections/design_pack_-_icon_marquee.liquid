@@ -203,7 +203,7 @@
             {%- capture sizes -%}
               (max-width: 480px) {{ 100 | divided_by: 3 | append: 'vw' | default: '33vw' }}, {{ 100 | divided_by: 5 | append: 'vw' | default: '33vw' }}
             {%- endcapture -%}
-            {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+            {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
           {% else %}
             <div>
               {{ placeholder_image | strip }}
@@ -239,7 +239,7 @@
             {%- capture sizes -%}
               (max-width: 480px) {{ 100 | divided_by: 3 | append: 'vw' | default: '33vw' }}, {{ 100 | divided_by: 5 | append: 'vw' | default: '33vw' }}
             {%- endcapture -%}
-            {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes }}
+            {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
           {% else %}
             <div>
               {{ placeholder_image | strip }}

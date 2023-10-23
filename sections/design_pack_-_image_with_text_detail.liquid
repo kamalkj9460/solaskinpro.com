@@ -440,7 +440,7 @@
             <div class="dsgn-pck__image__wrapper">
               <svg class="dsgn-pck__svg-sizer" viewBox="0 0 {{ image_crop_width }} {{ image_crop_height }}"></svg>
               {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 2800 | image_tag:  widths: widths, sizes: '(max-width: 480px) 80vw, 31vw' }}
+                {{ block.settings.image | image_url: width: 2800 | image_tag:  widths: widths, sizes: '(max-width: 480px) 80vw, 31vw' | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
               {%- else -%}
                   <img src="https://cdn.shopify.com/s/files/1/0577/7673/4361/files/{{ placeholder_image_id }}_800x.jpg"
                   alt=""

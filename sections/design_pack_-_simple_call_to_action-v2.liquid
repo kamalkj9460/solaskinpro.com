@@ -287,7 +287,7 @@
                             {%- capture sizes -%}
                               (max-width: 480px) calc(100vw / {{ block.settings.icon_width }}), calc({{ section.settings.text_width | default: 50 }}vw / {{ block.settings.icon_width }})
                             {%- endcapture -%}
-                            {{ block.settings[icon] | image_url: width: block.settings[icon].width | image_tag:  widths: widths, sizes: sizes }}
+                            {{ block.settings[icon] | image_url: width: block.settings[icon].width | image_tag:  widths: widths, sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                             {%- if block.settings[text] != blank -%}
                               <p class="dsgn-pck__icon-text">
                                 {{ block.settings[text] }}
@@ -423,7 +423,7 @@
                     {%- if block.settings.inset_image != blank -%}
                       <div class="dsgn-pck__image__wrapper">
                         <svg viewBox="0 0 {{ block.settings.inset_image.width }} {{ block.settings.inset_image.height }}"></svg>
-                        {{ block.settings.inset_image | image_url: width: 1000 | image_tag: loading: 'lazy' }}
+                        {{ block.settings.inset_image | image_url: width: 1000 | image_tag: loading: 'lazy' | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' }}
                       </div>
                     {%- else -%}
                       <div class="dsgn-pck__image__wrapper">

@@ -23,7 +23,7 @@
                   </video-media>
                 {%- elsif block.settings.image != blank -%}
                   {%- capture sizes -%}(max-width: 699px) calc(73vw - 40px), (max-width: 999px) calc(38vw - 64px), calc(min({{ settings.page_width }}px, 100vw) / {{ block.settings.column_size }}){%- endcapture -%}
-                  {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'rounded' -}}
+                  {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'rounded' | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' -}}
                 {%- endif -%}
 
                 {%- if block.settings.title != blank or block.settings.content != blank or block.settings.link_text != blank -%}
