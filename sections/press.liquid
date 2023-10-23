@@ -53,7 +53,7 @@
                       {%- capture sizes -%}{{ block.settings.logo_width }}px{%- endcapture -%}
                       {%- capture widths -%}{{ block.settings.logo_width }}, {{ block.settings.logo_width | times: 2 | at_most: block.settings.logo.width }}{%- endcapture -%}
                       {%- capture max_width -%}--press-image-max-width: {{ block.settings.logo_width }}px{%- endcapture -%}
-                      {{- block.settings.logo | image_url: width: block.settings.logo.width | image_tag: style: max_width, loading: 'lazy', widths: widths, class: 'press__image', sizes: sizes -}}
+                      {{- block.settings.logo | image_url: width: block.settings.logo.width | image_tag: style: max_width, loading: 'lazy', widths: widths, class: 'press__image', sizes: sizes | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad" data-src="' | replace: ' srcset="' , ' data-srcset="' -}}
                     </div>
                   {%- endif -%}
 

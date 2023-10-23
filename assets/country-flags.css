@@ -1,6 +1,6 @@
 .country-flags {
-  background: -webkit-image-set(url("//solaone.fr/cdn/shop/t/9/assets/country-flags.png?v=37230036826556269641698012887") 1x, url("//solaone.fr/cdn/shop/t/9/assets/country-flags-2x.png?v=119388446682176363021698012887") 2x) no-repeat top left;
-  background: image-set(url("//solaone.fr/cdn/shop/t/9/assets/country-flags.png?v=37230036826556269641698012887") 1x, url("//solaone.fr/cdn/shop/t/9/assets/country-flags-2x.png?v=119388446682176363021698012887") 2x) no-repeat top left;
+  background: -webkit-image-set(url("//solaskinpro.com/cdn/shop/t/8/assets/country-flags.png?v=37230036826556269641697794092") 1x, url("//solaskinpro.com/cdn/shop/t/8/assets/country-flags-2x.png?v=119388446682176363021697794092") 2x) no-repeat top left;
+  background: image-set(url("//solaskinpro.com/cdn/shop/t/8/assets/country-flags.png?v=37230036826556269641697794092") 1x, url("//solaskinpro.com/cdn/shop/t/8/assets/country-flags-2x.png?v=119388446682176363021697794092") 2x) no-repeat top left;
   width: 20px;
   height: 20px;
   flex-shrink: 0;
